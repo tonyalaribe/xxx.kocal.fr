@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #191a19;
+                color: #d4e7ee;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -49,7 +49,7 @@
                 font-size: 84px;
             }
 
-            .links > a {
+            p {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 12px;
@@ -79,16 +79,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    xxx.kocal.fr
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <p>
+                    Coming soon...
+                </p>
             </div>
         </div>
     </body>
