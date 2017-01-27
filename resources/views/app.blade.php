@@ -10,8 +10,10 @@
 <body>
 <div id="app">
     <app-header></app-header>
-    <router-view></router-view>
-    <tags-list></tags-list>
+    <div id="page-content">
+        <router-view></router-view>
+        <tags-list></tags-list>
+    </div>
     <app-footer></app-footer>
 </div>
 <script src="{{ asset('js/app.js') }}"></script>

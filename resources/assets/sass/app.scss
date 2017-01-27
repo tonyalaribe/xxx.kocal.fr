@@ -1,9 +1,25 @@
+@import "node_modules/bootstrap/dist/css/bootstrap-reboot.min";
+@import "colors";
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+html {
+  font-size: 62.5%;
+}
 
-// Variables
-@import "variables";
+body {
+  background-color: $body-bg;
+  color: $body-fg;
+  font-size: 1.6rem;
+}
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+body, #app {
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-content {
+  flex: 1;
+}

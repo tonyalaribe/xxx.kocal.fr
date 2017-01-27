@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'api'], function() {
+    Route::get('tags', 'ApiController@getTags');
 });
 
 Route::get('/{catchall?}', function () {
