@@ -5,8 +5,9 @@
  */
 
 require('./bootstrap');
-import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
+
+import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -17,12 +18,13 @@ Vue.use(VueResource);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('app', require('./components/app/App.vue'));
 Vue.component('app-header', require('./components/app/AppHeader.vue'));
 Vue.component('app-footer', require('./components/app/AppFooter.vue'));
 Vue.component('tags-list', require('./components/TagsList.vue'));
 
 const routes = [
-  {path: '/', component: require('./components/PageIndex.vue')}
+  {path: '/', component: require('./components/pages/PageIndex.vue')}
 ];
 
 const router = new VueRouter({
@@ -33,4 +35,5 @@ const router = new VueRouter({
 const app = new Vue({
   router,
   el: '#app',
+  template: `<app></app>`,
 });
