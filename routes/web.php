@@ -12,7 +12,10 @@
 */
 
 Route::group(['prefix' => 'api'], function() {
-    Route::get('tags', 'ApiController@getTags');
+    Route::get('sortedTags', 'ApiController@getSortedTags');
+    Route::get('/{catchall?}', function () {
+        return response('', 404);
+    })->where('catchall', '(.*)');
 });
 
 Route::get('/{catchall?}', function () {
