@@ -1,6 +1,6 @@
 <template>
   <header role="banner">
-    <h1>xxx.kocal.fr</h1>
+    <h1><router-link to="/">xxx.kocal.fr</router-link></h1>
   </header>
 </template>
 
@@ -16,17 +16,4 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import "../styles/_colors.scss";
-
-  header {
-    font-size: 2.4rem;
-
-    text-align: center;
-
-    background-color: $header-bg;
-    color: $header-fg;
-    text-shadow: -1px -1px 0 darken($header-bg, 10%), 1px 1px 0 lighten($header-fg, 10%);
-    box-shadow: 0 0 50px rgba($header-bg, 50%);
-  }
-</style>
+<style lang="scss" scoped src="../styles/app-header.scss"></style>

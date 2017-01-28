@@ -1,0 +1,11 @@
+@import "colors";
+
+header {
+  text-align: center;
+
+  background-color: $header-bg;
+}
+
+h1 {
+  font-size: $header-fg;
+}
