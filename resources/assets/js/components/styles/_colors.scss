@@ -1,8 +1,10 @@
 $body-bg: #333;
 $body-fg: lighten($body-bg, 60%);
 
+$primary: #1d61dd;
+
 $header-bg: darken($body-bg, 5%);
 $header-fg: lighten($header-bg, 20%);
 
-$footer-bg: lighten($header-bg, 3%);
+$footer-bg: $header-bg;
 $footer-fg: lighten($footer-bg, 23%);

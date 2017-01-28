@@ -1,0 +1,9 @@
+@import "../styles/_colors.scss";
+
+footer {
+  padding: 1em 0;
+  text-align: center;
+  background-color: $footer-bg;
+  color: $footer-fg;
+  box-shadow: 0 0 50px rgba($footer-bg, 50%);
+}

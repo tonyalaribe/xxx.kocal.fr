@@ -17,7 +17,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../../sass/_colors.scss";
+  @import "../styles/_colors.scss";
 
   header {
     font-size: 2.4rem;

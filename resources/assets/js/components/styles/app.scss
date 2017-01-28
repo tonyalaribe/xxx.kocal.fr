@@ -1,0 +1,19 @@
+@import "../styles/_colors.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $body-bg;
+  color: $body-fg;
+  font-size: 1.6rem;
+}
+
+a {
+  color: $primary;
+}
+
+#app-content {
+  padding: 1em;
+}

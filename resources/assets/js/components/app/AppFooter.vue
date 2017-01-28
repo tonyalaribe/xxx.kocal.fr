@@ -17,15 +17,4 @@
   }
 </script>
 
-
-<style lang="scss" scoped>
-  @import "../../../sass/_colors.scss";
-
-  footer {
-    padding-top: 1em;
-    text-align: center;
-    background-color: $footer-bg;
-    color: $footer-fg;
-    box-shadow: 0 0 50px rgba($footer-bg, 50%);
-  }
-</style>
+<style lang="scss" src="../styles/app-footer.scss" scoped></style>
