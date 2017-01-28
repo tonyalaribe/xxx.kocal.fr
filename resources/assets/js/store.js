@@ -7,21 +7,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    tags: []
+    sortedTags: []
   },
   getters: {
-    tags: state => {
-      return state.tags
+    sortedTags: state => {
+      return state.sortedTags
     }
   },
   actions: {
-    setTags({commit, state}, tags) {
-      commit('setTags', {tags})
+    setSortedTags({commit, state}, sortedTags) {
+      commit('setSortedTags', {sortedTags})
     }
   },
   mutations: {
-    setTags (state, payloader) {
-      Vue.set(state, 'tags', payloader.tags)
+    setSortedTags(state, payloader) {
+      Vue.set(state, 'sortedTags', payloader.sortedTags)
     }
   }
 });

@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex';
+
   export default {
     data () {
       return {
@@ -28,10 +30,19 @@
       }
     },
     mounted () {
-      this.loadingMessage = '(0/4) Loading tags...'
-      setTimeout(_ => {
-        this.loading = false
-      }, 2000)
+      this.fetchJson('/api/sortedTags', json => {
+        this.loadingMessage = 'Rendering tags...';
+        this.$store.dispatch('setSortedTags', json.sortedTags);
+        this.loading = false;
+      });
+    },
+    methods: {
+      fetchJson (url, cbSuccess) {
+        this.loadingMessage = `GET ${url}...`;
+        this.$http.get(url).then(res => {
+          res.json().then(json => cbSuccess(json))
+        }, err => this.loadingMessage = `${err.url}: ${err.status} ${err.statusText}`)
+      }
     }
   }
 </script>
