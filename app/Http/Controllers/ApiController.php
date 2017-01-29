@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Redis;
 
 class ApiController extends Controller
 {
-    private function getRedisPrefix () {
+    private function getRedisPrefix()
+    {
         return app('env') . '-xxx.kocal.fr-';
     }
+
     /**
      * GET /api/inFrontTags
      */
