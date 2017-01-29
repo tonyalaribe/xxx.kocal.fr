@@ -87,7 +87,6 @@ class ApiController extends Controller
             'Facial',
             'Foot',
             'French',
-            'Hardcore',
             'Hentai',
             'Interracial',
             'Japanese',
@@ -126,6 +125,10 @@ class ApiController extends Controller
                 ]
             ];
         }
+
+        $inFrontTags = array_values(array_sort($inFrontTags, function ($value) {
+            return $value['tag']['tag'];
+        }));
 
         return json_encode(['inFrontTags' => $inFrontTags]);
     }
