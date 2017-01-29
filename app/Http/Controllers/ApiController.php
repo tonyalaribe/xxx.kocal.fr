@@ -58,7 +58,7 @@ class ApiController extends Controller
             ->join('site', 'video.site_id', '=', 'site.id')
             ->where('tag.slug', $tag)
             ->orderBy('video.id', 'desc')
-            ->paginate(20);
+            ->paginate(40);
 
         return response()->json($videos);
     }
