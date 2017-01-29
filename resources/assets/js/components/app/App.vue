@@ -9,7 +9,9 @@
       <div v-show="!loading">
         <app-header></app-header>
         <div id="app-content">
-          <router-view></router-view>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
           <tags-list></tags-list>
         </div>
         <app-footer></app-footer>

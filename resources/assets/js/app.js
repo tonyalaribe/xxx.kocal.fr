@@ -8,11 +8,10 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import store from './store'
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
-
-import store from './store'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -25,8 +24,11 @@ Vue.component('app-header', require('./components/app/AppHeader.vue'));
 Vue.component('app-footer', require('./components/app/AppFooter.vue'));
 Vue.component('tags-list', require('./components/TagsList.vue'));
 
+Vue.component('v-paginator', require('vuejs-paginator'));
+
 const routes = [
-  {path: '/', component: require('./components/pages/PageIndex.vue')}
+  {path: '/', component: require('./components/pages/PageIndex.vue')},
+  {path: '/tags/:tag', component: require('./components/pages/PageTag.vue')}
 ];
 
 const router = new VueRouter({
