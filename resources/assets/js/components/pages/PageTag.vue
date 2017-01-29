@@ -33,6 +33,7 @@
       updateResource(data) {
         this.videos = data;
         this.loading = false;
+        $('html, body').animate({scrollTop: 0}, 400);
       }
     },
     watch: {
