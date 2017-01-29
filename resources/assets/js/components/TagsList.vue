@@ -4,7 +4,7 @@
       <h3 class="tags__title">{{ id.toUpperCase() }}</h3>
       <ul class="tags__list">
         <li v-for="tag in tags">
-          <router-link :to="'tags/' + tag.slug">{{ tag.tag }}</router-link>
+          <router-link :to="'/tags/' + tag.slug">{{ tag.tag }}</router-link>
         </li>
       </ul>
     </div>
