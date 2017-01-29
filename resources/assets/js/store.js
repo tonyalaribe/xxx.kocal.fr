@@ -7,19 +7,25 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    sortedTags: []
+    inFrontTags: [],
+    sortedTags: {},
   },
   getters: {
-    sortedTags: state => {
-      return state.sortedTags
-    }
+    inFrontTags: state => state.inFrontTags,
+    sortedTags: state => state.sortedTags,
   },
   actions: {
+    setInFrontTags({commit, state}, inFrontTags) {
+      commit('setInFrontTags', {inFrontTags})
+    },
     setSortedTags({commit, state}, sortedTags) {
       commit('setSortedTags', {sortedTags})
     }
   },
   mutations: {
+    setInFrontTags(state, payloader) {
+      Vue.set(state, 'inFrontTags', payloader.inFrontTags)
+    },
     setSortedTags(state, payloader) {
       Vue.set(state, 'sortedTags', payloader.sortedTags)
     }
