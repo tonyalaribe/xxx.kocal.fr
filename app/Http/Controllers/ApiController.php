@@ -71,10 +71,34 @@ class ApiController extends Controller
     {
         $inFrontTags = [];
         $tags = Tag::with('video')->orderBy('tag')->whereIn('tag', [
-            'Lesbian', 'Young', 'French', 'Teen',
-            'Ebony', 'Domination', 'Bus', 'Foot',
-            'Amateur', 'Anal', 'Babysitter', 'Hentai',
-            'Big tits', 'Japanese', 'Grandpa', 'Public',
+            'Amateur',
+            'Anal',
+            'Big tits',
+            'Blonde',
+            'Brunette',
+            'Bus',
+            'Busty',
+            'Cumshot',
+            'Deepthroat',
+            'Domination',
+            'Ebony',
+            'Facial',
+            'Foot',
+            'French',
+            'Hardcore',
+            'Hentai',
+            'Interracial',
+            'Japanese',
+            'Latina',
+            'Lesbian',
+            'Milf',
+            'Oral',
+            'Pov',
+            'Public',
+            'Squirting',
+            'Teen',
+            'Threesome',
+            'Young',
         ])->get();
 
         foreach ($tags as $tag) {
