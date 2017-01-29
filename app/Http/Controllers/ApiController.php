@@ -8,16 +8,20 @@ use Illuminate\Support\Facades\Redis;
 
 class ApiController extends Controller
 {
+    private function getRedisPrefix () {
+        return app('env') . '-xxx.kocal.fr-';
+    }
     /**
      * GET /api/inFrontTags
      */
     public function getInFrontTags()
     {
-        $inFrontTags = Redis::get('inFrontTags');
+        $redisKey = $this->getRedisPrefix() . 'inFrontTags';
+        $inFrontTags = Redis::get($redisKey);
 
         if (!$inFrontTags) {
             $inFrontTags = $this->fetchInFrontTags();
-            Redis::set('inFrontTags', $inFrontTags);
+            Redis::set($redisKey, $inFrontTags);
         }
 
         return $inFrontTags;
@@ -28,11 +32,12 @@ class ApiController extends Controller
      */
     public function getSortedTags()
     {
-        $sortedTags = Redis::get('sortedTags');
+        $redisKey = $this->getRedisPrefix() . 'sortedTags';
+        $sortedTags = Redis::get($redisKey);
 
         if (!$sortedTags) {
             $sortedTags = $this->fetchShortedTags();
-            Redis::set('sortedTags', $sortedTags);
+            Redis::set($redisKey, $sortedTags);
         }
 
         return $sortedTags;
