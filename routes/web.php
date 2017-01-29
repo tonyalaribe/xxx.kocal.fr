@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'api'], function () {
+    Route::get('inFrontTags', 'ApiController@getInFrontTags');
+    Route::get('sortedTags', 'ApiController@getSortedTags');
+    Route::get('tag/{tag}', 'ApiController@getVideosForTag')
+        ->where('tag', '(.*)');
+    Route::get('/{catchall?}', function () {
+        return response('', 404);
+    })->where('catchall', '(.*)');
 });
+
+Route::get('/{catchall?}', function () {
+    return view('app');
+})->where('catchall', '(.*)');
