@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Redis;
 
 class ApiController extends Controller
 {
-    private function getRedisPrefix () {
+    private function getRedisPrefix()
+    {
         return app('env') . '-xxx.kocal.fr-';
     }
+
     /**
      * GET /api/inFrontTags
      */
@@ -58,7 +60,7 @@ class ApiController extends Controller
             ->join('site', 'video.site_id', '=', 'site.id')
             ->where('tag.slug', $tag)
             ->orderBy('video.id', 'desc')
-            ->paginate(20);
+            ->paginate(40);
 
         return response()->json($videos);
     }
@@ -71,10 +73,34 @@ class ApiController extends Controller
     {
         $inFrontTags = [];
         $tags = Tag::with('video')->orderBy('tag')->whereIn('tag', [
-            'Lesbian', 'Young', 'French', 'Teen',
-            'Ebony', 'Domination', 'Bus', 'Foot',
-            'Amateur', 'Anal', 'Babysitter', 'Hentai',
-            'Big tits', 'Japanese', 'Grandpa', 'Public',
+            'Amateur',
+            'Anal',
+            'Big tits',
+            'Blonde',
+            'Brunette',
+            'Bus',
+            'Busty',
+            'Cumshot',
+            'Deepthroat',
+            'Domination',
+            'Ebony',
+            'Facial',
+            'Foot',
+            'French',
+            'Hardcore',
+            'Hentai',
+            'Interracial',
+            'Japanese',
+            'Latina',
+            'Lesbian',
+            'Milf',
+            'Oral',
+            'Pov',
+            'Public',
+            'Squirting',
+            'Teen',
+            'Threesome',
+            'Young',
         ])->get();
 
         foreach ($tags as $tag) {
