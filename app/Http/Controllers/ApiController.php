@@ -72,7 +72,7 @@ class ApiController extends Controller
     private function fetchInFrontTags()
     {
         $inFrontTags = [];
-        $tags = Tag::with('video')->orderBy('tag')->whereIn('tag', [
+        $tagsToPutInFront = [
             'Amateur',
             'Anal',
             'Big tits',
@@ -101,20 +101,28 @@ class ApiController extends Controller
             'Teen',
             'Threesome',
             'Young',
-        ])->get();
+        ];
 
-        foreach ($tags as $tag) {
-            $video = $tag->video->last();
+        $data = DB::table('tag')
+            ->select(
+                'tag.tag AS tag_tag', 'tag.slug AS tag_slug',
+                'video.thumbnail_url AS video_thumbnail_url'
+            )
+            ->join('video_tag_through', 'tag.id', '=', 'video_tag_through.tag_id')
+            ->join('video', 'video_tag_through.video_id', '=', 'video.id')
+            ->whereIn('tag', $tagsToPutInFront)
+            ->inRandomOrder()
+            ->groupBy('tag.id')
+            ->get();
+
+        foreach ($data as $d) {
             $inFrontTags[] = [
                 'tag' => [
-                    'tag' => $tag->tag,
-                    'slug' => $tag->slug,
+                    'tag' => $d->tag_tag,
+                    'slug' => $d->tag_slug,
                 ],
                 'video' => [
-                    'thumbnail_url' => $video->thumbnail_url
-                ],
-                'site' => [
-                    'url' => $video->site->url
+                    'thumbnail_url' => $d->video_thumbnail_url
                 ]
             ];
         }
