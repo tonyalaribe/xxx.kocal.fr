@@ -11,16 +11,15 @@
 |
 */
 
-Route::group(['prefix' => 'api'], function () {
-    Route::get('inFrontTags', 'ApiController@getInFrontTags');
-    Route::get('sortedTags', 'ApiController@getSortedTags');
-    Route::get('tag/{tag}', 'ApiController@getVideosForTag')
-        ->where('tag', '(.*)');
-    Route::get('/{catchall?}', function () {
-        return response('', 404);
-    })->where('catchall', '(.*)');
-});
+Route::get('/', 'VideosController@showLastVideosAction')
+    ->name('home');
 
-Route::get('/{catchall?}', function () {
-    return view('app');
-})->where('catchall', '(.*)');
+Route::get('/categories', 'VideosController@showCategoriesAction')
+    ->name('categories');
+
+Route::get('/tags', 'TagsController@showTagsAction')
+    ->name('tags');
+
+Route::get('/tags/{tag}', 'TagsController@showTagAction')
+    ->name('tag');
+
