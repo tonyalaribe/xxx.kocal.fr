@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class VideosController extends Controller
 {
     public function showLastVideosAction()
     {
-        $videos = Video::with('site')->paginate(40);
+        $videos = Cache::remember('videos', 60 * 60 * 24, function () {
+            return Video::with('site')->paginate(40);
+        });
 
         return view('home', [
             'videos' => $videos
