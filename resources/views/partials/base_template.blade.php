@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @stack('stylesheets')
+
+    {!! Analytics::render() !!}
 </head>
 <body>
 
