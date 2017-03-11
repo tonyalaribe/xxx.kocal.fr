@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 <head>
-    <title>xxx.kocal.fr - @yield('title', 'Homepage')</title>
+    <title>@yield('title', 'Homepage') - xxx.kocal.fr - A fucking website made by an incredible retarded student.</title>
 
     <meta charset="utf-8">
     <meta name="description" content="@yield('description')">
@@ -25,7 +25,10 @@
 <body>
 
 @include('partials.navbar')
-@yield('body')
+
+<div class="container">
+    @yield('body')
+</div>
 
 <script src="{{ mix('js/app.js') }}"></script>
 @stack('scripts')
