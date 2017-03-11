@@ -3,6 +3,10 @@
 @section('title', 'Homepage')
 @section('description', 'Welcome to xxx.kocal.fr')
 
+@push('metadata')
+<meta property="og:image" content="{{$videos->first()->thumbnail_url}}">
+@endpush
+
 @section('body')
     <h1>Home</h1>
 
