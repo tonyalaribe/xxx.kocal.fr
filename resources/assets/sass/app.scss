@@ -1,3 +1,12 @@
 @import "bootstrap-slate-variables";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "bootstrap-slate";
+
+.list-tags {
+  column-count: 5;
+
+  li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
