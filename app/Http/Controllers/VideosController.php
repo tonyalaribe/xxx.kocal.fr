@@ -9,7 +9,7 @@ class VideosController extends Controller
 {
     public function showLastVideosAction()
     {
-        $videos = Video::paginate(40);
+        $videos = Video::with('site')->paginate(40);
 
         return view('home', [
             'videos' => $videos
