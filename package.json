@@ -10,5 +10,7 @@
     "bootstrap-sass": "^3.3.7",
     "laravel-mix": "^0.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }
