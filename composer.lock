@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dde40755c524092ee2f4a4360a26930",
+    "content-hash": "e95d3c57ab4c1c63c8320b98d6b645e6",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1957,6 +1957,62 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2016-09-20T12:50:39+00:00"
+        },
+        {
+            "name": "vinkla/shield",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vinkla/laravel-shield.git",
+                "reference": "b5103d677ee4f808ebff17e9a1453a705e31cb9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vinkla/laravel-shield/zipball/b5103d677ee4f808ebff17e9a1453a705e31cb9d",
+                "reference": "b5103d677ee4f808ebff17e9a1453a705e31cb9d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.3.* || 5.4.*",
+                "php": "^7.0",
+                "symfony/http-kernel": "^3.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.3",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vinkla\\Shield\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@vinkla.com",
+                    "homepage": "https://vinkla.com"
+                }
+            ],
+            "description": "A HTTP basic auth middleware for Laravel",
+            "keywords": [
+                "auth",
+                "basic",
+                "http",
+                "laravel",
+                "middleware",
+                "shield"
+            ],
+            "time": "2017-01-31T20:21:15+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
