@@ -8,9 +8,14 @@
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
-    "laravel-mix": "^0.5.0"
+    "laravel-mix": "^0.8.8",
+    "lodash.debounce": "^4.0.8",
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
+    "vue-bootstrap-pagination": "^2.10.2"
   },
   "dependencies": {
-    "jquery": "^3.1.1"
+    "axios": "^0.15.3",
+    "jquery": "^3.1.1",
+    "vue": "^2.2.4"
   }
 }
