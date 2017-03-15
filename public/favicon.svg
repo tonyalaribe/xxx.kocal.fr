@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   enable-background="new"
+   sodipodi:docname="favicon.svg"
+   inkscape:export-filename="/home/kocal/Dev/Sites/xxx.kocal.fr/public/favicon.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4166">
+      <feBlend
+         inkscape:collect="always"
+         mode="multiply"
+         in2="BackgroundImage"
+         id="feBlend4168" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="26.358734"
+     inkscape:cy="89.152808"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     units="px"
+     showguides="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="bg">
+    <rect
+       id="rect3348"
+       width="127.99144"
+       height="128.36623"
+       x="0.011761473"
+       y="-0.0090987012"
+       ry="15"
+       style="fill:#333333" />
+  </g>
+  <g
+     style="display:inline;filter:url(#filter4166)"
+     transform="translate(0,-924.36216)"
+     id="g4150"
+     inkscape:groupmode="layer"
+     inkscape:label="Copie de K">
+    <text
+       sodipodi:linespacing="0%"
+       id="text4152"
+       y="1031.7134"
+       x="7.2634568"
+       style="font-style:normal;font-weight:normal;font-size:18.68590164px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:140.14425659px;line-height:0%;font-family:'Operator Mono SSm';-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';baseline-shift:baseline;fill:#000000;"
+         y="1031.7134"
+         x="7.2634568"
+         id="tspan4154"
+         sodipodi:role="line">K</tspan><tspan
+         id="tspan4156"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:140.14425659px;line-height:0%;font-family:'Operator Mono SSm';-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';baseline-shift:baseline;fill:#000000;"
+         y="1031.7134"
+         x="7.2634568"
+         sodipodi:role="line" /></text>
+  </g>
+  <g
+     inkscape:label="K"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-924.36216)"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:18.68590164px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3.0136373"
+       y="1028.1166"
+       id="text3336"
+       sodipodi:linespacing="0%"><tspan
+         sodipodi:role="line"
+         id="tspan3338"
+         x="3.0136373"
+         y="1028.1166"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:140.14425659px;line-height:0%;font-family:'Operator Mono SSm';-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';baseline-shift:baseline;fill:#ffffff">K</tspan><tspan
+         sodipodi:role="line"
+         x="3.0136373"
+         y="1028.1166"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:140.14425659px;line-height:0%;font-family:'Operator Mono SSm';-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';baseline-shift:baseline;fill:#ffffff"
+         id="tspan3345" /></text>
+  </g>
+  <g
+     inkscape:label="Copie de xxx"
+     id="g4170"
+     inkscape:groupmode="layer">
+    <text
+       sodipodi:linespacing="125%"
+       id="text4172"
+       y="119.44344"
+       x="49.412621"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="fill:#000000;fill-opacity:1;-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';font-family:'Operator Mono SSm';font-style:italic;font-stretch:normal;font-variant:normal;"
+         y="119.44344"
+         x="49.412621"
+         id="tspan4174"
+         sodipodi:role="line">xxx</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="xxx">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="48.341198"
+       y="117.47916"
+       id="text3341"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3343"
+         x="48.341198"
+         y="117.47916"
+         style="font-style:italic;font-variant:normal;font-stretch:normal;font-family:'Operator Mono SSm';-inkscape-font-specification:'Operator Mono SSm weight=330 Italic';fill:#00d0ff;fill-opacity:1">xxx</tspan></text>
+  </g>
+</svg>
