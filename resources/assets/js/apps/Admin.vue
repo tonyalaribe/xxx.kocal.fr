@@ -38,7 +38,6 @@
                             <th>#</th>
                             <th>Site</th>
                             <th>Title</th>
-                            <th>Tags</th>
                             <th>Duration</th>
                             <th class="column-thumb">Thumb</th>
                             <th class="column-actions"></th>
@@ -49,7 +48,6 @@
                             <td>{{video.id}}</td>
                             <td><a :href="video.site.url">{{ video.site.name }}</a></td>
                             <td><a :href="video.url">{{ video.title }}</a></td>
-                            <td>{{video.tags}}</td>
                             <td>{{video.duration}}</td>
                             <td>
                                 <a :href="video.thumbnail_url" class="thumbnail">
