@@ -1,14 +1,23 @@
 @extends('partials.base_template')
 
-@section('title', 'Homepage')
-@section('description', 'Welcome to xxx.kocal.fr')
+@section('title', 'Videos')
+@section('description')
+    Page {{$videos->currentPage()}} on {{$videos->lastPage()}}.@endsection
 
 @push('metadata')
 <meta property="og:image" content="{{$videos->first()->thumbnail_url}}">
 @endpush
 
 @section('body')
-    <h1>Home</h1>
+    <h1>{{$videos->total() }} videos
+        <small>
+            Page {{$videos->currentPage()}} on {{$videos->lastPage()}}.
+        </small>
+    </h1>
+
+    <div class="text-center">
+        {{ $videos }}
+    </div>
 
     @foreach($videos->chunk(4) as $chunk)
         <div class="row">
