@@ -1,10 +1,3 @@
-<?php
-$links = [
-    ['route' => 'categories', 'text' => 'All categories'],
-    ['route' => 'tags', 'text' => 'All tags']
-];
-?>
-
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">

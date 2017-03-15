@@ -24,7 +24,13 @@
 </head>
 <body>
 
-@include('partials.navbar')
+@include('partials.navbar', [
+    'links' => [
+        ['route' => 'videos', 'text' => 'Videos'],
+        ['route' => 'categories', 'text' => 'Categories'],
+        ['route' => 'tags', 'text' => 'All tags']
+    ]
+])
 
 <div class="container">
     @yield('body')
