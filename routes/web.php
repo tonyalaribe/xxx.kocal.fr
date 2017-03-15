@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', 'VideosController@showLastVideosAction')
-    ->name('home');
+Route::get('/', function () {
+    return redirect('videos', 302);
+})->name('home');
 
-Route::get('/categories', 'VideosController@showCategoriesAction')
+Route::get('/videos', 'VideosController@showLastVideosAction')
+    ->name('videos');
+
+Route::get('/categories', 'TagsController@showCategoriesAction')
     ->name('categories');
 
 Route::get('/tags', 'TagsController@showTagsAction')
