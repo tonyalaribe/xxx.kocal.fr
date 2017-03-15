@@ -1,2 +1,2 @@
-import 'jquery';
-import 'bootstrap-sass';
+import './bootstrap'
+import 'bootstrap-sass'

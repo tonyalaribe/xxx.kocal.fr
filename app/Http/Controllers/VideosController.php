@@ -10,17 +10,10 @@ class VideosController extends Controller
 {
     public function showLastVideosAction()
     {
-        $videos = Cache::remember('videos', 60 * 60 * 24, function () {
-            return Video::with('site')->paginate(40);
-        });
+        $videos = Video::with('site')->paginate(40);
 
-        return view('home', [
+        return view('videos', [
             'videos' => $videos
         ]);
-    }
-
-    public function showCategoriesAction()
-    {
-        return view('categories');
     }
 }

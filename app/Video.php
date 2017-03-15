@@ -18,9 +18,21 @@ class Video extends Model
         return $this->absolutizeUrl($this->attributes['thumbnail_url']);
     }
 
+    public function getDurationAttribute()
+    {
+        $seconds = $this->attributes['duration'];
+        $format = 'i:s';
+
+        if ($seconds > 60 * 60) {
+            $format = 'H:' . $format;
+        }
+
+        return gmdate($format, $seconds);
+    }
+
     public function site()
     {
-        return $this->belongsTo('App\Site');
+        return $this->belongsTo(Site::class);
     }
 
     private function absolutizeUrl($uri)

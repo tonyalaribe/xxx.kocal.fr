@@ -23,3 +23,17 @@ Route::get('/tags', 'TagsController@showTagsAction')
 Route::get('/tags/{tag}', 'TagsController@showTagAction')
     ->name('tag');
 
+Route::group([
+    'as' => 'admin.',
+    'prefix' => 'admin',
+    'middleware' => 'shield'
+], function () {
+    Route::get('/', 'AdminController@showIndex')->name('index');
+
+    Route::delete('/delete_video/{id}', 'AdminController@deleteVideo')->name('delete_video');
+});
+
+Route::get('/logout', function () {
+    return response(view('logout'), 401);
+})->name('logout');
+
