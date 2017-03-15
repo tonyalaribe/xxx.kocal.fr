@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 <head>
-    <title>@yield('title', 'Homepage') - xxx.kocal.fr - A fucking website made by an incredible retarded student.</title>
+    <title>@yield('title', 'Homepage') - xxx.kocal.fr - A fucking website made by a retarded student.</title>
 
     <meta charset="utf-8">
     <meta name="description" content="@yield('description')">
@@ -9,6 +9,8 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <![endif]-->
+
+    <link rel="icon" type="image/png" href="{{asset('favicon.png')}}">
 
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ url()->full() }}">
