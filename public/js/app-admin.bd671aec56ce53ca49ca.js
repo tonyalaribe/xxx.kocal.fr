@@ -537,7 +537,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             loading: true,
-            url: '/admin',
+            url: location.pathname,
             search: '',
             headers: {
                 id: '#',
@@ -580,7 +580,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get(this.url, options).then(function (response) {
                 _this.loading = false;
                 _this.videos = response.data.data;
-                console.log(_this.videos[0]);
                 _this.getPaginationValuesFromJson(response.data);
             }).catch(console.err);
         },

@@ -83,7 +83,7 @@
         data () {
             return {
                 loading: true,
-                url: '/admin',
+                url: location.pathname,
                 search: '',
                 headers: {
                     id: '#',
@@ -125,7 +125,6 @@
                     .then(response => {
                         this.loading = false;
                         this.videos = response.data.data;
-                        console.log(this.videos[0]);
                         this.getPaginationValuesFromJson(response.data);
                     })
                     .catch(console.err)
