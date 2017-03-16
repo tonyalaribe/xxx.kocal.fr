@@ -18,6 +18,12 @@ Route::get('/', function () {
 Route::get('/videos', 'VideosController@showLastVideosAction')
     ->name('videos');
 
+Route::get('/videos/search', 'VideosController@showVideosBySearchTerms')
+    ->name('videos_by_search_terms');
+
+Route::get('/videos/{tag}', 'VideosController@showVideosByTagAction')
+    ->name('videos_by_tag');
+
 Route::get('/categories', 'TagsController@showCategoriesAction')
     ->name('categories');
 

@@ -37,4 +37,18 @@ class VideosController extends Controller
             'videos' => $videos
         ]);
     }
+
+    public function showVideosByTagAction(Tag $tag)
+    {
+        $videos = Video::with(['site', 'tags'])
+            ->whereHas('tags', function ($q) use ($tag) {
+                $q->where('slug', '=', $tag->slug);
+            })
+            ->paginate(40);
+
+        return view('videos_by_tag', [
+            'tag' => $tag,
+            'videos' => $videos
+        ]);
+    }
 }
