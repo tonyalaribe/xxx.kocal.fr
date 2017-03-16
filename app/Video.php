@@ -35,6 +35,10 @@ class Video extends Model
         return $this->belongsTo(Site::class);
     }
 
+    public function tags() {
+        return $this->belongsToMany(Tag::class, 'video_tag_through', 'video_id', 'tag_id');
+    }
+
     private function absolutizeUrl($uri)
     {
         $uri = new \Enrise\Uri($uri);

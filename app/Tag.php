@@ -8,7 +8,8 @@ class Tag extends Model
 {
     protected $table = 'tag';
 
-    public function videos () {
-        return $this->hasManyThrough(Video::class, VideoTag::class, 'video_id', 'id');
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class, 'video_tag_through', 'tag_id', 'video_id');
     }
 }
