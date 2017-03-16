@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('videos', 302);
+    return redirect()->route('videos');
 })->name('home');
 
 Route::get('/videos', 'VideosController@showLastVideosAction')
@@ -30,15 +30,12 @@ Route::get('/categories', 'TagsController@showCategoriesAction')
 Route::get('/tags', 'TagsController@showTagsAction')
     ->name('tags');
 
-Route::get('/tags/{tag}', 'TagsController@showTagAction')
-    ->name('tag');
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'shield'], function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.videos');
+    })->name('home');
 
-Route::group([
-    'as' => 'admin.',
-    'prefix' => 'admin',
-    'middleware' => 'shield'
-], function () {
-    Route::get('/', 'AdminController@showIndex')->name('index');
+    Route::get('/videos', 'AdminController@showVideosAction')->name('videos');
 
     Route::delete('/delete_video/{id}', 'AdminController@deleteVideo')->name('delete_video');
 });
@@ -46,4 +43,3 @@ Route::group([
 Route::get('/logout', function () {
     return response(view('logout'), 401);
 })->name('logout');
-

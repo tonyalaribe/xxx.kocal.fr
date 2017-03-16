@@ -20,9 +20,9 @@
 </head>
 <body>
 
-@include('partials.navbar', [
+@include('admin.partials.navbar', [
     'links' => [
-        ['route' => 'logout', 'text' => 'Logout']
+        ['route' => 'admin.videos', 'text' => 'Videos']
     ]
 ])
 

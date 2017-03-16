@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 class TagsController extends Controller
 {
@@ -77,11 +76,6 @@ class TagsController extends Controller
         return view('tags', [
             'sortedTags' => $sortedTags
         ]);
-    }
-
-    public function showTagAction()
-    {
-
     }
 
     private function fetchTags()

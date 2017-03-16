@@ -11,7 +11,8 @@
         <ul class="list-tags">
             @foreach($tags as $tag)
                 <li>
-                    <a href="{{ route('tag', ['tag' => $tag->slug]) }}">{{$tag->tag}}</a>
+                    {{-- absolute = false to save some bandwidth--}}
+                    <a href="{{ route('videos_by_tag', ['tag' => $tag], false) }}">{{$tag->tag}}</a>
                 </li>
             @endforeach
         </ul>

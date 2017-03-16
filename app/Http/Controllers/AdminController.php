@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function showIndex(Request $request)
+    public function showVideosAction(Request $request)
     {
         if ($request->ajax()) {
             $videos = Video::with('site')
@@ -22,7 +22,7 @@ class AdminController extends Controller
             return $videos->toJson();
         }
 
-        return view('admin.index');
+        return view('admin.videos');
     }
 
     public function deleteVideo($id)
