@@ -15,6 +15,16 @@
             <ul class="nav navbar-nav">
                 @each('partials.navbar_item', $links, 'link')
             </ul>
+
+            <form action="{{ route('videos_by_search_terms') }}" method="get" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control"
+                           {{-- old() throws an Exception if there is no Session attached
+                           to the Request (ex: during 404) --}}
+                           value="{{Request::hasSession() ? old('q') : ''}}">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
