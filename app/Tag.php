@@ -12,4 +12,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(Video::class, 'video_tag_through', 'tag_id', 'video_id');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
