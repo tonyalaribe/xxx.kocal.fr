@@ -6,10 +6,15 @@
     <div class="row">
         @foreach($chunk as $video)
             <div class="col-md-3 col-xs-6">
-                <a href="{{ $video->url }}" class="thumbnail text-center">
-                    <img src="{{$video->thumbnail_url}}" alt="Thumbnail of « {{$video->title}} » video">
-                    {{$video->title}}
-                </a>
+                <div class="video">
+                    <a href="{{ $video->url }}" class="video__link thumbnail text-center">
+                        <img src="{{ $video->thumbnail_url }}"
+                             class="video__thumbnail"
+                             alt="Thumbnail of « {{ $video->title }} » video">
+                        <span class="video__title">{{ $video->title }}</span>
+                        <span class="video__duration">{{ $video->duration }}</span>
+                    </a>
+                </div>
             </div>
         @endforeach
     </div>

@@ -10,3 +10,23 @@
     text-overflow: ellipsis;
   }
 }
+
+.video {
+  position: relative;
+}
+
+.video__title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video__duration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 5px;
+  border-top-right-radius: $thumbnail-border-radius;
+  background-color: rgba(#000, .7);
+}
