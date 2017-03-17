@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <![endif]-->
 
-    <link rel="icon" type="image/png" href="{{asset('favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ url()->full() }}">
