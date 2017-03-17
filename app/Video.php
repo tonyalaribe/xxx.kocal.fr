@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
+    protected $with = ['site'];
+
     public function getUrlAttribute()
     {
         return $this->absolutizeUrl($this->attributes['url']);
