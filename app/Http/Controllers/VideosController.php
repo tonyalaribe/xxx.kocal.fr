@@ -10,7 +10,7 @@ class VideosController extends Controller
 {
     public function showLastVideosAction()
     {
-        $videos = Video::paginate(40);
+        $videos = Video::with('site')->paginate(40);
 
         return view('videos', [
             'videos' => $videos
@@ -25,8 +25,9 @@ class VideosController extends Controller
 
         $searchTerms = $request->get('q');
 
-        $videos = Video::where('title', 'like', '%' . $searchTerms . '%')
-            ->paginate(40);
+        $videos = Video::with('site')
+            ->where('title', 'like', '%' . $searchTerms . '%'
+            )->paginate(40);
 
         $videos->appends(['q' => $searchTerms]);
         $request->flashOnly('q');
@@ -39,7 +40,7 @@ class VideosController extends Controller
 
     public function showVideosByTagAction(Tag $tag)
     {
-        $videos = Video::with('tags')
+        $videos = Video::with(['site', 'tags'])
             ->whereHas('tags', function ($q) use ($tag) {
                 $q->where('slug', '=', $tag->slug);
             })
