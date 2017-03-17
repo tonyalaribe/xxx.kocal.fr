@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    protected $table = 'video';
-
     public function getUrlAttribute()
     {
         return $this->absolutizeUrl($this->attributes['url']);
@@ -36,7 +34,7 @@ class Video extends Model
     }
 
     public function tags() {
-        return $this->belongsToMany(Tag::class, 'video_tag_through', 'video_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'videos_tags_through', 'video_id', 'tag_id');
     }
 
     private function absolutizeUrl($uri)
