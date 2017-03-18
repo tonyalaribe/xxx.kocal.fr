@@ -11,7 +11,7 @@
             @foreach($chunk as $popularTag)
                 <div class="col-md-3 col-xs-6">
                     <div class="video">
-                        <a href="{{ route('videos_by_tag', ['tag' => $popularTag]) }}"
+                        <a href="{{ route('videos_by_tag', ['slug' => $popularTag->slug]) }}"
                            class="video__link thumbnail text-center">
                             <img src="{{ $popularTag->videos->first()->thumbnail_url }}"
                                  class="video__thumbnail"
