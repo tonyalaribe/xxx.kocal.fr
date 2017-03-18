@@ -43,6 +43,12 @@ class Video extends Model implements Transformable
         return gmdate($format, $seconds);
     }
 
+    public function getISO8601DurationAttribute()
+    {
+        $duration = new \Bretterer\IsoDurationConverter\DurationParser();
+        return $duration->compose($this->attributes['duration']);
+    }
+
     public function site()
     {
         return $this->belongsTo(Site::class);
