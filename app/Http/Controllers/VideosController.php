@@ -17,7 +17,7 @@ class VideosController extends Controller
         ]);
     }
 
-    public function showVideosBySearchTerms(Request $request)
+    public function showVideosBySearchTermsAction(Request $request)
     {
         if (!$request->has('q')) {
             return redirect()->route('videos');
