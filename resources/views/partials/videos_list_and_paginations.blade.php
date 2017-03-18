@@ -6,7 +6,11 @@
     <div class="row">
         @foreach($chunk as $video)
             <div class="col-md-3 col-xs-6">
-                <div class="video">
+                <div class="video" itemscope itemtype="http://schema.org/VideoObject">
+                    <meta itemprop="url" content="{{ $video->url }}"/>
+                    <meta itemprop="name" content="{{ $video->title }}"/>
+                    <meta itemprop="duration" content="{{ $video->ISO8601Duration }}"/>
+                    <meta itemprop="thumbnail" content="{{ $video->thumbnail_url }}"/>
                     <a href="{{ $video->url }}" class="video__link thumbnail text-center">
                         <img src="{{ $video->thumbnail_url }}"
                              class="video__thumbnail"
