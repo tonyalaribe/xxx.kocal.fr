@@ -29,8 +29,8 @@
 @include('partials.navbar', [
     'links' => [
         ['route' => 'videos', 'text' => 'Videos'],
-        ['route' => 'categories', 'text' => 'Categories'],
-        ['route' => 'tags', 'text' => 'All tags']
+        ['route' => 'tags', 'text' => 'All tags'],
+        ['route' => 'tags.popular', 'text' => 'Popular tags'],
     ]
 ])
 

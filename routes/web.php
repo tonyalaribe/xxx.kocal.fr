@@ -24,11 +24,11 @@ Route::get('/videos/search', 'VideosController@showVideosBySearchTerms')
 Route::get('/videos/{tag}', 'VideosController@showVideosByTagAction')
     ->name('videos_by_tag');
 
-Route::get('/categories', 'TagsController@showCategoriesAction')
-    ->name('categories');
-
 Route::get('/tags', 'TagsController@showTagsAction')
     ->name('tags');
+
+Route::get('/tags/popular', 'TagsController@showPopularTagsAction')
+    ->name('tags.popular');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'shield'], function () {
     Route::get('/', function () {

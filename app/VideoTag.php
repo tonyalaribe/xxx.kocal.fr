@@ -17,9 +17,4 @@ class VideoTag extends Model
     {
         return $this->hasMany(Video::class, 'id', 'video_id');
     }
-
-    public function video()
-    {
-        return $this->hasOne(Video::class, 'id', 'video_id');
-    }
 }
