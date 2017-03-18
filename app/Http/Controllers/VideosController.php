@@ -23,6 +23,7 @@ class VideosController extends Controller
 
     public function showLastVideosAction()
     {
+        $this->repository->pushCriteria(new OrderByIdDescCriteria());
         $videos = $this->repository->with(['site'])->paginate();
 
         return view('videos', [

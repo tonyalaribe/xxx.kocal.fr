@@ -13,21 +13,22 @@ class AdminController extends Controller
     /**
      * @var VideoRepository
      */
-    private $videoRepository;
+    private $repository;
 
     /**
      * AdminController constructor.
-     * @param $videoRepository
+     * @param $repository
      */
-    public function __construct(VideoRepository $videoRepository)
+    public function __construct(VideoRepository $repository)
     {
-        $this->videoRepository = $videoRepository;
+        $this->repository = $repository;
     }
 
     public function showVideosAction(Request $request)
     {
         if ($request->ajax()) {
-            $videos = $this->videoRepository->with(['site']);
+            $this->repository->pushCriteria(new OrderByIdDescCriteria());
+            $videos = $this->repository->with(['site']);
 
             if (null !== $searchTerms = $request->get('search')) {
                 $videos = $videos->pushCriteria(new VideoTitleLikeCriteria($searchTerms));
@@ -41,6 +42,6 @@ class AdminController extends Controller
 
     public function deleteVideo($id)
     {
-        $this->videoRepository->delete($id);
+        $this->repository->delete($id);
     }
 }
