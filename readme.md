@@ -23,13 +23,13 @@ $ php artisan key:generate
 ```
 ### Laravel-shield
 
-[laravel-shield](https://github.com/vinkla/laravel-shield#usage) is to 
-provide a quick and simple HTTP authentication, that protect the administration
+[laravel-shield](https://github.com/vinkla/laravel-shield#usage) is used to 
+provide a quick and simple HTTP authentication that protect the administration
 area (/admin).
 
 You should generate a hashed username and password by using 
-[htpasswd](https://tldr.ostera.io/htpasswd) command line tool or 
-[password_hash()](https://secure.php.net/manual/en/function.password-hash.php) PHP function:
+[`htpasswd`](https://tldr.ostera.io/htpasswd) command line tool or 
+[`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) PHP function:
 
 ```bash
 $ php -r 'echo password_hash("your-username", PASSWORD_DEFAULT);'
