@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/videos', 'VideosController@showLastVideosAction')
     ->name('videos');
 
-Route::get('/videos/search', 'VideosController@showVideosBySearchTerms')
+Route::get('/videos/search', 'VideosController@showVideosBySearchTermsAction')
     ->name('videos_by_search_terms');
 
 Route::get('/videos/{tag}', 'VideosController@showVideosByTagAction')

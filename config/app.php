@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
-        Vinkla\Shield\ShieldServiceProvider::class
+        Vinkla\Shield\ShieldServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
     ],
 
     /*

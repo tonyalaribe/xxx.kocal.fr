@@ -1,11 +1,26 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-class Video extends Model
+class Video extends Model implements Transformable
 {
+    use TransformableTrait;
+
+    protected $fillable = [
+        'title',
+        'url',
+        'thumbnail_url',
+        'duration',
+    ];
+
+    protected $fieldSearcheable = [
+        'title' => 'like'
+    ];
+
     public function getUrlAttribute()
     {
         return $this->absolutizeUrl($this->attributes['url']);
@@ -33,7 +48,8 @@ class Video extends Model
         return $this->belongsTo(Site::class);
     }
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class, 'videos_tags_through', 'video_id', 'tag_id');
     }
 
