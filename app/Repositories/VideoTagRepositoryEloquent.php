@@ -33,4 +33,10 @@ class VideoTagRepositoryEloquent extends BaseRepository implements VideoTagRepos
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
+
+    public function groupBy($by) {
+        $this->model->groupBy($by);
+
+        return $this;
+    }
 }

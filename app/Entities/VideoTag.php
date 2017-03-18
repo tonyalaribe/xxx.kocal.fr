@@ -13,4 +13,9 @@ class VideoTag extends Model implements Transformable
     protected $table = 'videos_tags_through';
 
     protected $fillable = [];
+
+    public function tags()
+    {
+        return $this->belongsTo(Tag::class, 'tag_id');
+    }
 }

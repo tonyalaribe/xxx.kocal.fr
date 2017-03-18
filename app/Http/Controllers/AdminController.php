@@ -2,24 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Criteria\OrderByIdDescCriteria;
+use App\Criteria\VideoTitleLikeCriteria;
+use App\Repositories\VideoRepository;
 use App\Video;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * @var VideoRepository
+     */
+    private $videoRepository;
+
+    /**
+     * AdminController constructor.
+     * @param $videoRepository
+     */
+    public function __construct(VideoRepository $videoRepository)
+    {
+        $this->videoRepository = $videoRepository;
+    }
+
     public function showVideosAction(Request $request)
     {
         if ($request->ajax()) {
-            $videos = Video::with('site')
-                ->orderBy('id', 'desc');
+            $videos = $this->videoRepository->with(['site']);
 
-            if ($request->has('search')) {
-                $videos = $videos->where('title', 'like', '%' . $request->get('search') . '%');
+            if (null !== $searchTerms = $request->get('search')) {
+                $videos = $videos->pushCriteria(new VideoTitleLikeCriteria($searchTerms));
             }
 
-            $videos = $videos->paginate($request->get('paginate'));
-
-            return $videos->toJson();
+            return $videos->paginate($request->get('paginate'))->toJson();
         }
 
         return view('admin.videos');
@@ -27,7 +41,6 @@ class AdminController extends Controller
 
     public function deleteVideo($id)
     {
-        $video = Video::findOrFail($id);
-        $video->delete();
+        $this->videoRepository->delete($id);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Tag;
+use App\Entities\Tag;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 

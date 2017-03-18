@@ -2,32 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
-use App\VideoTag;
+use App\Criteria\PopularTagsCriteria;
+use App\Criteria\RandomlyTaggedVideoCriteria;
+use App\Repositories\TagRepository;
+use App\Repositories\VideoTagRepository;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 class TagsController extends Controller
 {
+    /**
+     * @var TagRepository
+     */
+    private $tagRepository;
+
+    /**
+     * @var VideoTagRepository
+     */
+    private $videoTagRepository;
+
+    public function __construct(TagRepository $tagRepository, VideoTagRepository $videoTagRepository)
+    {
+        $this->tagRepository = $tagRepository;
+        $this->videoTagRepository = $videoTagRepository;
+    }
+
     public function showTagsAction()
     {
         $sortedTags = Cache::remember('sortedTags', 60 * 60 * 24, function () {
+            $tags = $this->tagRepository->orderBy('tag')->all(['tag', 'slug']);
             $sortedTags = [];
-            $tags = Tag::select(['tag', 'slug'])
-                ->orderBy('tag')
-                ->get();
 
             foreach ($tags as $tag) {
-                $key = $tag->slug[0];
-                if (is_numeric($key)) {
-                    $key = '0-9';
-                }
+                $firstLetter = $tag->slug[0];
+                $firstLetter = is_numeric($firstLetter) ? '0-9' : $firstLetter;
 
                 if ($tag->slug === $tag->tag) {
                     continue;
                 }
 
-                $sortedTags[$key][] = $tag;
+                $sortedTags[$firstLetter][] = $tag;
             }
 
             return $sortedTags;
@@ -40,27 +53,19 @@ class TagsController extends Controller
 
     public function showPopularTagsAction()
     {
-        $maxPopularTags = 30;
+        $maxPopularTags = 40;
 
         $popularTags = Cache::remember('popular_tags', 60 * 60 * 24, function () use ($maxPopularTags) {
             $popularTags = collect();
-            $tagsSortedAsMaxCount = VideoTag
-                ::orderBy('count', 'desc')
-                ->groupBy('tag_id')
-                ->limit($maxPopularTags)
-                ->get(['tag_id', DB::raw('COUNT(tag_id) AS count')]);
 
-            foreach ($tagsSortedAsMaxCount->pluck('tag_id') as $tag_id) {
-                $popularTag = Tag::with([
-                    'videos' => function ($q) {
-                        $q
-                            ->select(['thumbnail_url'])
-                            ->inRandomOrder()
-                            ->limit(1);
-                    }
-                ])
-                    ->where('id', '=', $tag_id)
-                    ->get(['id', 'tag', 'slug']);
+            $this->videoTagRepository->pushCriteria(new PopularTagsCriteria($maxPopularTags));
+            $this->tagRepository->pushCriteria(new RandomlyTaggedVideoCriteria());
+
+            foreach ($this->videoTagRepository->all(['tag_id'])->pluck('tag_id') as $tag_id) {
+                $popularTag = $this->tagRepository->scopeQuery(function ($q) use ($tag_id) {
+                    return $q->where('id', $tag_id);
+                })
+                    ->all(['id', 'tag', 'slug']);
                 $popularTags = $popularTags->merge($popularTag);
             }
 
@@ -69,7 +74,7 @@ class TagsController extends Controller
 
         return view('tags_popular', [
             'maxPopularTags' => $maxPopularTags,
-            'popularTags' => collect($popularTags)
+            'popularTags' => $popularTags
         ]);
     }
 }
