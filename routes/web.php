@@ -11,16 +11,35 @@
 |
 */
 
-Route::group(['prefix' => 'api'], function () {
-    Route::get('inFrontTags', 'ApiController@getInFrontTags');
-    Route::get('sortedTags', 'ApiController@getSortedTags');
-    Route::get('tag/{tag}', 'ApiController@getVideosForTag')
-        ->where('tag', '(.*)');
-    Route::get('/{catchall?}', function () {
-        return response('', 404);
-    })->where('catchall', '(.*)');
+Route::get('/', function () {
+    return redirect()->route('videos');
+})->name('home');
+
+Route::get('/videos', 'VideosController@showLastVideosAction')
+    ->name('videos');
+
+Route::get('/videos/search', 'VideosController@showVideosBySearchTerms')
+    ->name('videos_by_search_terms');
+
+Route::get('/videos/{tag}', 'VideosController@showVideosByTagAction')
+    ->name('videos_by_tag');
+
+Route::get('/tags', 'TagsController@showTagsAction')
+    ->name('tags');
+
+Route::get('/tags/popular', 'TagsController@showPopularTagsAction')
+    ->name('tags.popular');
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'shield'], function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.videos');
+    })->name('home');
+
+    Route::get('/videos', 'AdminController@showVideosAction')->name('videos');
+
+    Route::delete('/delete_video/{id}', 'AdminController@deleteVideo')->name('delete_video');
 });
 
-Route::get('/{catchall?}', function () {
-    return view('app');
-})->where('catchall', '(.*)');
+Route::get('/logout', function () {
+    return response(view('logout'), 401);
+})->name('logout');
