@@ -22,8 +22,8 @@
                            {{-- old() throws an Exception if there is no Session attached
                            to the Request (ex: during 404) --}}
                            value="{{Request::hasSession() ? old('q') : ''}}">
-                    <button type="submit" class="btn btn-primary">Search</button>
                 </div>
+                <button type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>
