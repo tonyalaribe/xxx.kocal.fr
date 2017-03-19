@@ -2,11 +2,9 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\TagRepository;
 use App\Entities\Tag;
-use App\Validators\TagValidator;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class TagRepositoryEloquent
@@ -24,7 +22,6 @@ class TagRepositoryEloquent extends BaseRepository implements TagRepository
         return Tag::class;
     }
 
-    
 
     /**
      * Boot up the repository, pushing criteria
