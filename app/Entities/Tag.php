@@ -19,9 +19,4 @@ class Tag extends Model implements Transformable
     {
         return $this->belongsToMany(Video::class, 'videos_tags_through', 'tag_id', 'video_id');
     }
-
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 }

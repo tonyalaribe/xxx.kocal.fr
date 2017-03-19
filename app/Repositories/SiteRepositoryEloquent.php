@@ -2,11 +2,9 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\SiteRepository;
 use App\Entities\Site;
-use App\Validators\SiteValidator;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class SiteRepositoryEloquent
@@ -24,7 +22,6 @@ class SiteRepositoryEloquent extends BaseRepository implements SiteRepository
         return Site::class;
     }
 
-    
 
     /**
      * Boot up the repository, pushing criteria

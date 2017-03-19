@@ -2,11 +2,9 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\VideoTagRepository;
 use App\Entities\VideoTag;
-use App\Validators\VideoTagValidator;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class VideoTagRepositoryEloquent
@@ -24,7 +22,6 @@ class VideoTagRepositoryEloquent extends BaseRepository implements VideoTagRepos
         return VideoTag::class;
     }
 
-    
 
     /**
      * Boot up the repository, pushing criteria
@@ -34,7 +31,8 @@ class VideoTagRepositoryEloquent extends BaseRepository implements VideoTagRepos
         $this->pushCriteria(app(RequestCriteria::class));
     }
 
-    public function groupBy($by) {
+    public function groupBy($by)
+    {
         $this->model->groupBy($by);
 
         return $this;
